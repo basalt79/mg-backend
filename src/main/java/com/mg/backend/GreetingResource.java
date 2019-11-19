@@ -8,7 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/hello")
+@Path("/")
 public class GreetingResource {
 
     @Inject
@@ -16,12 +16,13 @@ public class GreetingResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/greet/{name}")
+    @Path("greet/{name}")
     public String greeting(@PathParam String name) {
         return greetingService.greeting(name);
     }
     
     @GET
+    @Path("hello")
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         return "hello";
