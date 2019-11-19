@@ -1,4 +1,4 @@
-# Quarks Quickstart
+# Quarkus Quickstart
 
 This project implements a simple Hello World REST service using Quarks.
 
@@ -6,5 +6,5 @@ This project implements a simple Hello World REST service using Quarks.
 
 With JDK8+
 ```bash
-mvn compile quarks:dev
+mvn compile quarkus:dev
 ```
