@@ -1,13 +1,12 @@
-# Helidon Quickstart SE Example
+# Quarks Quickstart
 
-This project implements a simple Hello World REST service using Helidon SE.
+This project implements a simple Hello World REST service using Quarks.
 
 ## Build and run
 
 With JDK8+
 ```bash
-mvn package
-java -jar target/backend.jar
+mvn compile quarks:dev
 ```
 
 ## Exercise the application
