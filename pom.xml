@@ -13,6 +13,14 @@
     <artifactId>backend</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>${project.artifactId}</name>
+  
+    <distributionManagement>
+      <repository>
+        <id>github</id>
+        <name>GitHub Apache Maven Packages</name>
+        <url>https://maven.pkg.github.com/basalt79/mg-backend</url>
+      </repository>
+    </distributionManagement>
 
     <properties>
         <mainClass>com.mg.backend.Main</mainClass>
