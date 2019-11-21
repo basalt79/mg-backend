@@ -33,8 +33,9 @@ public class PlayerResource {
     }
 
     @PUT
-    public Player put(Player player) {
-        service.put(player);
+    @Path("{id}")
+    public Player put(@PathParam String id, Player player) {
+        service.put(id, player);
         return player;
     }
 
