@@ -1,6 +1,10 @@
 package com.mg.backend;
 
-public class Player {
+import io.quarkus.mongodb.panache.MongoEntity;
+import io.quarkus.mongodb.panache.PanacheMongoEntity;
+
+@MongoEntity(collection = "player")
+public class Player extends PanacheMongoEntity {
 
     private String firstName;
     private String lastName;

@@ -43,7 +43,8 @@
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-mongodb-client</artifactId>
+      <artifactId>quarkus-mongodb-panache</artifactId>
+      <version>0.28.1</version>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>

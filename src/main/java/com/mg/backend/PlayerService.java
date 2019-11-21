@@ -1,51 +1,35 @@
 package com.mg.backend;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import org.bson.Document;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
 public class PlayerService {
 
     @Inject
-    MongoClient mongoClient;
+    PlayerRepository repository;
 
     public List<Player> list() {
-        List<Player> list = new ArrayList<>();
-        MongoCursor<Document> cursor = getCollection().find().iterator();
-
-        try {
-            while (cursor.hasNext()) {
-                Document document = cursor.next();
-                Player greeting = new Player();
-                greeting.setFirstName(document.getString("firstName"));
-                list.add(greeting);
-            }
-        } finally {
-            cursor.close();
-        }
-
-        return list;
-
+        return repository.listAll();
     }
 
-    public void add(Player player) {
-        Document document = new Document().append("firstName", player.getFirstName());
-        getCollection().insertOne(document);
+    public List<Player> add(Player player) {
+        player.persist();
+        return list();
     }
 
-    private MongoCollection<Document> getCollection() {
-        return mongoClient.getDatabase("greeting").getCollection("greeting");
+    public Player put(Player player) {
+        player.update();
+        return player;
     }
 
-    public String greeting(String name) {
-        return "Hello " + name;
+    public void delete(String id) {
+        repository.findById(id).delete();
+    }
+
+    public List<Player> findAllForClub(String query) {
+        return repository.find("{'club': {'$regex': ?1, '$options': 'i'}}", query).list();
     }
 }
 
