@@ -1,5 +1,6 @@
-package com.mg.backend;
+package com.mg.backend.player;
 
+import com.mg.backend.Position;
 import io.quarkus.mongodb.panache.MongoEntity;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 

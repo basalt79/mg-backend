@@ -1,4 +1,4 @@
-package com.mg.backend;
+package com.mg.backend.player;
 
 import io.quarkus.mongodb.panache.PanacheMongoRepositoryBase;
 

@@ -1,4 +1,4 @@
-package com.mg.backend;
+package com.mg.backend.player;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
